@@ -14,14 +14,22 @@
         </processorPath>
         <module name="CustomerServiceAPI" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SmsServiceAPI" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CustomerServiceAPI" target="1.8" />
+      <module name="SmsServiceAPI" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CustomerServiceAPI" options="-parameters -Amapstruct.defaultComponentModel=spring" />
+      <module name="SmsServiceAPI" options="-parameters" />
     </option>
   </component>
 </project>
