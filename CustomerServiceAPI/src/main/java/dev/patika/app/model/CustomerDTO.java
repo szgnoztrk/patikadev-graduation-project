@@ -26,7 +26,7 @@ public class CustomerDTO {
     @Email
     @NotBlank
     private String email;
-    @ApiModelProperty(example = "+905343697677")
+    @ApiModelProperty(example = "905343697677")
     @NotBlank
     private String phone;
     @ApiModelProperty(example = "MALE OR FEMALE")

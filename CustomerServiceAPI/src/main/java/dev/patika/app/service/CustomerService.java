@@ -5,6 +5,7 @@ import dev.patika.app.model.CustomerDTO;
 import dev.patika.app.repository.CustomerRepository;
 import dev.patika.app.utility.exceptions.CustomerIsAlreadyExistsException;
 import dev.patika.app.utility.exceptions.NotFoundCustomerException;
+import dev.patika.app.utility.exceptions.SsidWrongFormatException;
 import dev.patika.app.utility.mappers.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -40,16 +41,12 @@ public class CustomerService {
             throw new NotFoundCustomerException("Customer with Phone(" + phone + ") not found!");
     }
 
-    public Optional<Customer> getByEmail(String email){
-        if(this.repository.existsAllByEmail(email))
-            return Optional.of(this.repository.findAllByEmail(email));
-        else
-            throw new NotFoundCustomerException("Customer with E-mail(" + email + ") not found!");
-    }
-
     public Optional<Customer> save(CustomerDTO customerDTO){
         if(this.repository.existsAllBySsid(customerDTO.getSsid()))
             throw new CustomerIsAlreadyExistsException("Customer with SSID(" + customerDTO.getSsid() + ") is already exists!");
+
+        if(customerDTO.getSsid().charAt(customerDTO.getSsid().length() - 1) % 2 == 1)
+            throw new SsidWrongFormatException("SSID: The last digit cannot be an odd number.");
 
         if(this.repository.existsAllByPhone(customerDTO.getPhone()))
             throw new CustomerIsAlreadyExistsException("Customer with Phone(" + customerDTO.getPhone() + ") is already exists!");
@@ -66,13 +63,17 @@ public class CustomerService {
         this.repository.delete(customer);
     }
 
-    public void deleteBySsid(String ssid){
-        Customer customer = this.getBySsid(ssid).get();
-        this.repository.delete(customer);
-    }
-
     public Optional<Customer> updateById(long id,CustomerDTO customerDTO){
         if(this.repository.existsAllById(id)){
+            if(this.repository.existsAllBySsid(customerDTO.getSsid()))
+                throw new CustomerIsAlreadyExistsException("Customer with SSID(" + customerDTO.getSsid() + ") is already exists!");
+
+            if(this.repository.existsAllByPhone(customerDTO.getPhone()))
+                throw new CustomerIsAlreadyExistsException("Customer with Phone(" + customerDTO.getPhone() + ") is already exists!");
+
+            if(this.repository.existsAllByEmail(customerDTO.getEmail()))
+                throw new CustomerIsAlreadyExistsException("Customer with Email(" + customerDTO.getEmail() + ") is already exists!");
+
             Customer customer = this.mapper.mapFromCustomerDTOToCustomer(customerDTO);
             return Optional.of(this.repository.save(customer));
         }
