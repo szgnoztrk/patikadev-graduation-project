@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CreditScoreAPI/CreditScoreAPI.iml" filepath="$PROJECT_DIR$/CreditScoreAPI/CreditScoreAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditScoreAPI/CreditScoreServiceAPI.iml" filepath="$PROJECT_DIR$/CreditScoreAPI/CreditScoreServiceAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/CustomerServiceAPI/CustomerServiceAPI.iml" filepath="$PROJECT_DIR$/CustomerServiceAPI/CustomerServiceAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmsServiceAPI/SmsServiceAPI.iml" filepath="$PROJECT_DIR$/SmsServiceAPI/SmsServiceAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/gittigidiyor-graduation-project.iml" filepath="$PROJECT_DIR$/.idea/gittigidiyor-graduation-project.iml" />
