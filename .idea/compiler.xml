@@ -20,9 +20,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SmsServiceAPI" />
         <module name="CreditScoreServiceAPI" />
+        <module name="CreditApplicationServiceAPI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="app" target="1.8" />
+      <module name="CreditApplicationService" target="1.8" />
+      <module name="CreditApplicationServiceAPI" target="1.8" />
       <module name="CreditScoreServiceAPI" target="1.8" />
       <module name="CustomerServiceAPI" target="1.8" />
       <module name="SmsServiceAPI" target="1.8" />
@@ -30,9 +34,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CreditApplicationService" options="-parameters" />
+      <module name="CreditApplicationServiceAPI" options="-parameters" />
       <module name="CreditScoreServiceAPI" options="-parameters" />
       <module name="CustomerServiceAPI" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="SmsServiceAPI" options="-parameters" />
+      <module name="app" options="-parameters" />
     </option>
   </component>
 </project>

@@ -19,6 +19,7 @@ public class Customer {
     private String ssid;
     private String email;
     private String phone;
+    private double salary;
     @Enumerated(EnumType.STRING)
     private Gender gender;
 }

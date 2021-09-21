@@ -29,6 +29,9 @@ public class CustomerDTO {
     @ApiModelProperty(example = "905343697677")
     @NotBlank
     private String phone;
+    @ApiModelProperty(example = "5000")
+    @NotNull
+    private double salary;
     @ApiModelProperty(example = "MALE OR FEMALE")
     @NotNull
     private Gender gender;

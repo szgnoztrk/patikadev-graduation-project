@@ -1,4 +1,4 @@
-package dev.patika.app.utility.config;
+package dev.patika.app.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

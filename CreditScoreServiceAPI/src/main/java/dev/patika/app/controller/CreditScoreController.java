@@ -21,28 +21,34 @@ public class CreditScoreController {
             result.put("success", false);
             result.put("message", "SSID is empty!");
         } else {
-            char lastChar = ssid.charAt(ssid.length() - 1);
-            result.put("success", true);
-            switch (lastChar){
-                case '0':
-                    result.put("scores", 2000);
-                    break;
-                case '2':
-                    result.put("scores", 550);
-                    break;
-                case '4':
-                    result.put("scores", 1000);
-                    break;
-                case '6':
-                    result.put("scores", 400);
-                    break;
-                case '8':
-                    result.put("scores", 900);
-                    break;
-                default:
-                    result.put("success", false);
-                    result.put("message", "SSID: The last digit cannot be an odd number.");
-                    break;
+            if(ssid.length() != 11) {
+                result.put("success", false);
+                result.put("message", "SSID: Must consist of 11 digits.");
+            }
+            else {
+                char lastChar = ssid.charAt(ssid.length() - 1);
+                result.put("success", true);
+                switch (lastChar) {
+                    case '0':
+                        result.put("scores", 2000);
+                        break;
+                    case '2':
+                        result.put("scores", 550);
+                        break;
+                    case '4':
+                        result.put("scores", 1000);
+                        break;
+                    case '6':
+                        result.put("scores", 400);
+                        break;
+                    case '8':
+                        result.put("scores", 900);
+                        break;
+                    default:
+                        result.put("success", false);
+                        result.put("message", "SSID: The last digit cannot be an odd number.");
+                        break;
+                }
             }
         }
         if(Boolean.parseBoolean(result.get("success").toString()))
