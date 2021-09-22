@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/sms-service/pom.xml" />
         <option value="$PROJECT_DIR$/score-service/pom.xml" />
         <option value="$PROJECT_DIR$/apply-service/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
       </list>
     </option>
   </component>

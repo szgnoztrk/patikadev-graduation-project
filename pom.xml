@@ -16,7 +16,9 @@
 
     <modules>
         <module>apply-service</module>
+        <module>config-server</module>
         <module>customer-service</module>
+        <module>eureka-server</module>
         <module>score-service</module>
         <module>sms-service</module>
     </modules>
