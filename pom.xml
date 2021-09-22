@@ -15,6 +15,9 @@
     </properties>
 
     <modules>
+        <module>apply-service</module>
         <module>customer-service</module>
+        <module>score-service</module>
+        <module>sms-service</module>
     </modules>
 </project>
