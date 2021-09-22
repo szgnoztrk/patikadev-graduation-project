@@ -14,11 +14,6 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-    <!-- <modules>
-        <module>CreditApplicationServiceAPI</module>
-        <module>CreditScoreServiceAPI</module>
-        <module>CustomerServiceAPI</module>
-        <module>SmsServiceAPI</module>
+    <modules>
     </modules>
--->
 </project>
