@@ -66,7 +66,7 @@ public class ApplyController {
             result.setStatus(false);
             result.setLimit(0);
         }
-        else if(creditScore > 500 && creditScore < 1000){
+        else if(creditScore < 1000){
             if(salary < 5000){
                 result.setStatus(true);
                 result.setLimit(10000);
@@ -74,7 +74,7 @@ public class ApplyController {
                 result.setStatus(true);
                 result.setLimit(20000);
             }
-        } else if(creditScore >= 1000){
+        } else{
             result.setStatus(true);
             result.setLimit(salary * 4);
         }
