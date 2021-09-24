@@ -4,14 +4,18 @@ import dev.patika.customerservice.model.Customer;
 import dev.patika.customerservice.model.CustomerDTO;
 import dev.patika.customerservice.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/customers")
+@RequestMapping("/api/customers")
 @RequiredArgsConstructor
+@Slf4j
 public class CustomersController {
     private final CustomerService service;
 
@@ -21,13 +25,14 @@ public class CustomersController {
     }
 
     @GetMapping("/id/{customerId}")
-    public Customer getCustomerById(@PathVariable long customerId){
-        return this.service.getById(customerId).get();
+    public ResponseEntity<Customer> getCustomerById(@PathVariable long customerId){
+        return new ResponseEntity<>(this.service.getById(customerId).get(), HttpStatus.OK);
     }
 
     @GetMapping("/ssid/{customerSsid}")
-    public Customer getCustomerBySsid(@PathVariable String customerSsid){
-        return this.service.getBySsid(customerSsid).get();
+    public ResponseEntity<Customer> getCustomerBySsid(@PathVariable String customerSsid){
+        log.info("Geldi");
+        return new ResponseEntity<>(this.service.getBySsid(customerSsid).get(), HttpStatus.OK);
     }
 
     @GetMapping("/phone/{customerPhone}")

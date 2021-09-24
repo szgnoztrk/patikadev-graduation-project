@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="feign-client" />
         <module name="config-server" />
         <module name="eureka-server" />
         <module name="sms-service" />
@@ -28,6 +29,7 @@
     <bytecodeTargetLevel>
       <module name="app" target="1.8" />
       <module name="apply-service" target="1.8" />
+      <module name="common-service" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="ConfigServer" target="1.8" />
       <module name="CreditApplicationService" target="1.8" />
@@ -36,6 +38,7 @@
       <module name="customer-service" target="1.8" />
       <module name="CustomerServiceAPI" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="feign-client" target="8" />
       <module name="gittigidiyor-graduation-project" target="8" />
       <module name="gittigidiyor-spring-bootcamp" target="8" />
       <module name="score-service" target="1.8" />
@@ -53,9 +56,11 @@
       <module name="SmsServiceAPI" options="-parameters" />
       <module name="app" options="-parameters" />
       <module name="apply-service" options="-parameters" />
+      <module name="common-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="customer-service" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="eureka-server" options="-parameters" />
+      <module name="feign-client" options="-parameters" />
       <module name="score-service" options="-parameters" />
       <module name="sms-service" options="-parameters" />
     </option>
