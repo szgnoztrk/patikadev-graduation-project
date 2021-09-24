@@ -1,4 +1,7 @@
 dev\patika\feignclient\FeignConfig.class
 dev\patika\feignclient\model\Customer.class
-dev\patika\feignclient\model\enums\Gender.class
+dev\patika\feignclient\model\Sms.class
 dev\patika\feignclient\client\CustomerServiceClient.class
+dev\patika\feignclient\model\enums\Gender.class
+dev\patika\feignclient\client\SmsServiceClient.class
+dev\patika\feignclient\client\ScoreServiceClient.class

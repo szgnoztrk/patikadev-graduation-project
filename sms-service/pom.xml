@@ -10,7 +10,7 @@
     </parent>
     <groupId>dev.patika</groupId>
     <artifactId>sms-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>sms-service</name>
     <description>sms-service</description>
     <properties>

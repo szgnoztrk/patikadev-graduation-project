@@ -23,23 +23,6 @@ class SmsServiceTest {
     SmsService smsService;
 
     @Test
-    void save() {
-        Sms expected = new Sms();
-        expected.setSsid("29776973134");
-        when(this.repository.save(any())).thenReturn(expected);
-
-        Sms smsDto = new Sms();
-        Sms actual =this.smsService.save(smsDto);
-
-        assertAll(
-                () -> assertNotNull(actual),
-                () -> assertEquals(expected, actual),
-                () -> assertEquals(expected.getSsid(), actual.getSsid())
-        );
-
-    }
-
-    @Test
     void gellAll() {
         when(repository.findAll()).thenReturn(Collections.singletonList(
                 new Sms("29776973134")

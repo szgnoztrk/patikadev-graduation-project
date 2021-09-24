@@ -10,7 +10,7 @@
     </parent>
     <groupId>dev.patika</groupId>
     <artifactId>apply-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>apply-service</name>
     <description>apply-service</description>
     <properties>
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>dev.patika</groupId>
             <artifactId>feign-client</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
