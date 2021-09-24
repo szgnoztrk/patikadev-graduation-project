@@ -26,4 +26,7 @@ public class Sms {
     private double salary;
     private double creditLimit;
 
+    public Sms(String s) {
+        this.ssid = s;
+    }
 }
