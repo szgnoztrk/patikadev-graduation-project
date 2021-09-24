@@ -8,6 +8,7 @@ import dev.patika.customerservice.utility.exceptions.NotFoundCustomerException;
 import dev.patika.customerservice.utility.exceptions.SsidWrongFormatException;
 import dev.patika.customerservice.utility.mappers.CustomerMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class CustomerService {
     private final CustomerRepository repository;
     private final CustomerMapper mapper;
@@ -22,17 +24,29 @@ public class CustomerService {
     public List<Customer> getAll(){ return this.repository.findAll(); }
 
     public Optional<Customer> getById(long id){
-        if(this.repository.existsAllById(id))
+        if(this.repository.existsAllById(id)) {
+            log.info("Customer with ID(" + id + ") found!");
             return Optional.of(this.repository.findAllById(id));
-        else
+        }
+        else {
+            log.warn("Customer with ID(" + id + ") not found!");
             throw new NotFoundCustomerException("Customer with ID(" + id + ") not found!");
+        }
     }
 
     public Optional<Customer> getBySsid(String ssid){
-        if(this.repository.existsAllBySsid(ssid))
+        if(this.repository.existsAllBySsid(ssid)) {
+            log.info("Customer with SSID(" + ssid + ") found!");
             return Optional.of(this.repository.findAllBySsid(ssid));
-        else
+        }
+        else if(ssid.charAt(ssid.length() - 1) % 2 == 1) {
+            log.warn("SSID: The last digit cannot be an odd number.");
+            throw new NotFoundCustomerException("SSID: The last digit cannot be an odd number.");
+        }
+        else {
+            log.warn("Customer with SSID(" + ssid + ") not found!");
             throw new NotFoundCustomerException("Customer with SSID(" + ssid + ") not found!");
+        }
     }
 
     public Optional<Customer> getByPhone(String phone){

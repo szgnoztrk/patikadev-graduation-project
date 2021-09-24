@@ -31,7 +31,6 @@ public class CustomersController {
 
     @GetMapping("/ssid/{customerSsid}")
     public ResponseEntity<Customer> getCustomerBySsid(@PathVariable String customerSsid){
-        log.info("Geldi");
         return new ResponseEntity<>(this.service.getBySsid(customerSsid).get(), HttpStatus.OK);
     }
 

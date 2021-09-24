@@ -19,15 +19,7 @@ public class SmsController {
     }
 
     @PostMapping
-    public Sms sendSms(@RequestParam String phone, @RequestParam String message){
-        return this.prepareSms(phone, message);
-    }
-
-    public Sms prepareSms(String phone, String message){
-        Sms sms = new Sms();
-        sms.setPhone(phone);
-        sms.setMessage(message);
-        sms.setTimestamp(System.currentTimeMillis());
-        return sms;
+    public Sms sendSms(@RequestBody Sms sms){
+        return this.smsService.save(sms);
     }
 }

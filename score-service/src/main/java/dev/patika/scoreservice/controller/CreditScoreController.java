@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/credit-score")
+
 public class CreditScoreController {
 
     @GetMapping
