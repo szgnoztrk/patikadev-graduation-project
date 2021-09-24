@@ -1,0 +1,4 @@
+dev\patika\feignclient\FeignConfig.class
+dev\patika\feignclient\model\Customer.class
+dev\patika\feignclient\model\enums\Gender.class
+dev\patika\feignclient\client\CustomerServiceClient.class
