@@ -49,7 +49,7 @@ RESPONSE: HTTP 400 -> (Customer) with ID is not found!
 
 #### List Customers Resource
 ```
-GET /api/customers
+GET http://localhost:8080/api/customers
 Content-Type: application/json
 
 RESPONSE: HTTP 200
@@ -68,7 +68,7 @@ RESPONSE: HTTP 200
 
 #### Get a Customer by Customer Id Resource
 ```
-GET /api/customers/id/{id}
+GET http://localhost:8080/api/customers/id/{id}
 Accept: application/json
 Content-Type: application/json
 
@@ -93,7 +93,7 @@ RESPONSE: HTTP 400
 
 #### Get a Customer by Customer SSID Resource
 ```
-GET /api/customers/ssid/{ssid}
+GET http://localhost:8080/api/customers/ssid/{ssid}
 Accept: application/json
 Content-Type: application/json
 
@@ -118,7 +118,7 @@ RESPONSE: HTTP 400
 
 #### Get a Customer by Customer Phone Resource
 ```
-GET /api/customers/phone/{phone}
+GET http://localhost:8080/api/customers/phone/{phone}
 Accept: application/json
 Content-Type: application/json
 
